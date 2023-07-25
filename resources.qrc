@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/opacity_set" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
