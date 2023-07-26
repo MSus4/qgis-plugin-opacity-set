@@ -191,11 +191,11 @@ class OpacitySet:
             rlayer.setCacheImage(None)
         rlayer.triggerRepaint()
         
-    def select_80(self):
+    def select_75(self):
         rlayer = qgis.utils.iface.activeLayer()
 
         # Set opacity
-        rlayer.renderer().setOpacity(0.8)
+        rlayer.renderer().setOpacity(0.75)
 
         # Trigger a repaint
         if hasattr(rlayer, "setCacheImage"):
@@ -222,7 +222,7 @@ class OpacitySet:
             self.first_start = False
             self.dlg = OpacitySetDialog()
             self.dlg.pushButton.clicked.connect(self.select_50)
-            self.dlg.pushButton_2.clicked.connect(self.select_80)
+            self.dlg.pushButton_2.clicked.connect(self.select_75)
             self.dlg.pushButton_3.clicked.connect(self.select_100)
 
         # show the dialog

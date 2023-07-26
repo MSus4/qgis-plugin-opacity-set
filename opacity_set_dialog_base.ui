@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Opacity 80</string>
+    <string>Opacity 75</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">

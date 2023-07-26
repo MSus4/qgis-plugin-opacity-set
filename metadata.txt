@@ -5,12 +5,12 @@
 [general]
 name=Opacity Set
 qgisMinimumVersion=3.0
-description=Sets opacity 0.5, 0.80 or 1 for selected raster layer.
+description=Sets opacity 0.5, 0.75 or 1 for selected raster layer.
 version=0.1
 author=Matti Susi
 email=mattisusi@outlook.com
 
-about=Sets opacity 0.5, 0.8 or 1 for selected raster layer.
+about=Sets opacity 0.5, 0.75 or 1 for selected raster layer.
 
 tracker=https://github.com/MSus4/qgis-plugin-opacity-set/issues
 repository=https://github.com/MSus4/qgis-plugin-opacity-set/
