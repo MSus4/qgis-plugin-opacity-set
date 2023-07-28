@@ -25,7 +25,7 @@ from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 import qgis
-
+from qgis.core import QgsRasterLayer, QgsProject
 
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -182,36 +182,84 @@ class OpacitySet:
             self.iface.removeToolBarIcon(action)
     def select_50(self):
         rlayer = qgis.utils.iface.activeLayer()
+        layerList = QgsProject.instance().mapLayers().values()
+        llayer = None
 
-        # Set opacity
-        rlayer.renderer().setOpacity(0.5)
+        if isinstance(rlayer, QgsRasterLayer):
 
-        # Trigger a repaint
-        if hasattr(rlayer, "setCacheImage"):
-            rlayer.setCacheImage(None)
-        rlayer.triggerRepaint()
-        
+            # Set opacity for the layer
+            rlayer.renderer().setOpacity(0.5)
+
+            # Trigger a repaint
+            if hasattr(rlayer, "setCacheImage"):
+                rlayer.setCacheImage(None)
+            rlayer.triggerRepaint()
+
+        else: 
+            for layer in layerList: 
+                if isinstance(layer, QgsRasterLayer):
+                    llayer = layer
+                    # Set opacity for the layer
+                    llayer.renderer().setOpacity(0.5)
+
+                    # Trigger a repaint
+                    if hasattr(llayer, "setCacheImage"):
+                        llayer.setCacheImage(None)
+                    llayer.triggerRepaint()
+
     def select_75(self):
         rlayer = qgis.utils.iface.activeLayer()
+        layerList = QgsProject.instance().mapLayers().values()
+        llayer = None
 
-        # Set opacity
-        rlayer.renderer().setOpacity(0.75)
+        if isinstance(rlayer, QgsRasterLayer):
 
-        # Trigger a repaint
-        if hasattr(rlayer, "setCacheImage"):
-            rlayer.setCacheImage(None)
-        rlayer.triggerRepaint()
+            # Set opacity for the layer
+            rlayer.renderer().setOpacity(0.75)
+
+            # Trigger a repaint
+            if hasattr(rlayer, "setCacheImage"):
+                rlayer.setCacheImage(None)
+            rlayer.triggerRepaint()
+
+        else: 
+            for layer in layerList: 
+                if isinstance(layer, QgsRasterLayer):
+                    llayer = layer
+                    # Set opacity for the layer
+                    llayer.renderer().setOpacity(0.75)
+
+                    # Trigger a repaint
+                    if hasattr(llayer, "setCacheImage"):
+                        llayer.setCacheImage(None)
+                    llayer.triggerRepaint()
 
     def select_100(self):
         rlayer = qgis.utils.iface.activeLayer()
+        layerList = QgsProject.instance().mapLayers().values()
+        llayer = None
 
-        # Set opacity
-        rlayer.renderer().setOpacity(1)
+        if isinstance(rlayer, QgsRasterLayer):
 
-        # Trigger a repaint
-        if hasattr(rlayer, "setCacheImage"):
-            rlayer.setCacheImage(None)
-        rlayer.triggerRepaint()
+            # Set opacity for the layer
+            rlayer.renderer().setOpacity(1)
+
+            # Trigger a repaint
+            if hasattr(rlayer, "setCacheImage"):
+                rlayer.setCacheImage(None)
+            rlayer.triggerRepaint()
+
+        else: 
+            for layer in layerList: 
+                if isinstance(layer, QgsRasterLayer):
+                    llayer = layer
+                    # Set opacity for the layer
+                    llayer.renderer().setOpacity(1)
+
+                    # Trigger a repaint
+                    if hasattr(llayer, "setCacheImage"):
+                        llayer.setCacheImage(None)
+                    llayer.triggerRepaint()
 
     def run(self):
         """Run method that performs all the real work"""

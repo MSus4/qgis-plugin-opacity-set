@@ -6,11 +6,11 @@
 name=Opacity Set
 qgisMinimumVersion=3.0
 description=Sets opacity 0.5, 0.75 or 1 for selected raster layer.
-version=0.1
+version=0.2
 author=Matti Susi
 email=mattisusi@outlook.com
 
-about=Sets opacity 0.5, 0.75 or 1 for selected raster layer.
+about=Simple plugin that sets opacity 0.5, 0.75 or 1 for selected raster layer. If no raster layer is selected, it will change opacity for all raster layers.
 
 tracker=https://github.com/MSus4/qgis-plugin-opacity-set/issues
 repository=https://github.com/MSus4/qgis-plugin-opacity-set/
@@ -29,7 +29,7 @@ homepage=https://github.com/MSus4/qgis-plugin-opacity-set/
 category=Plugins
 icon=icon.png
 # experimental flag
-experimental=True
+experimental=False
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
